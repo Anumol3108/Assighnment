@@ -1,0 +1,25 @@
+package databaseproject1;
+import java.util.logging.Level;
+import java.util.logging.logger;
+import java.util.sql.Connection;
+import java.util.sql.DriveMnager;
+public class Databaseproject{
+    public static void main(string[] args{
+        Databaseproject pro=new Databaseproject1();
+        pro.createconnection();
+        
+    }
+    void createconnection(){
+        
+    try{
+    
+         class.forName("com.mysql.jdbc.Driver");
+         connection con=DriverMnager.getconnection("jdbc:mysql://localhost:3306/mydb","root","root");
+         system.out.println("Database connection success");
+    } catch (classNotfoundException ex){
+        Logger.getlogger(databaseproject1.class.getName()).log(Level.SEVERE,null,ex);
+    } catch (SQLException ex) {
+        Logger.getLogger(Databaseproject1.class.getName()).log(Level.SEVERE,null,ex);
+    }
+}
+}
